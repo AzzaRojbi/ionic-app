@@ -5,10 +5,12 @@ import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 import { Storage } from '@ionic/storage';
 
-import { AboutPage } from '../pages/about/about';
+import { TasksPage } from '../pages/tasks/tasks';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { AddtodoPage } from '../pages/addtodo/addtodo';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,13 +18,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    TasksPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AddtodoPage
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     IonicModule.forRoot(MyApp),
     
         IonicStorageModule.forRoot({
@@ -33,10 +36,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    TasksPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AddtodoPage
   ],
   providers: [
     StatusBar,
