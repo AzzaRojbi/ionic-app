@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
-import { Storage } from '@ionic/storage';
+import { HttpModule } from '@angular/http';
 
 import { TasksPage } from '../pages/tasks/tasks';
 import { ContactPage } from '../pages/contact/contact';
@@ -14,6 +14,7 @@ import { AddtodoPage } from '../pages/addtodo/addtodo';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { PeopleService } from '../providers/people-service/people-service';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
   BrowserModule,
+  HttpModule,  
     IonicModule.forRoot(MyApp),
     
         IonicStorageModule.forRoot({
@@ -45,7 +47,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PeopleService
   ]
 })
 export class AppModule {}
